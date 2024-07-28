@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Main Section -->
+<div class="main section">
+    <div class="leftSide">
+        <div class="cover">
+            <img src="{% static 'assets/profileimage.png'%}" alt="">
+            <div class="info">
+                <h4>My information</h4>
+                <ul>
+                    <li>Name : Michael Angelo Lim</li>
+                    <li>Email : agshards@gmail.com</li>
+                    <li>University : AMA university</li>
+                    <li>Phone # : 09485860507</li>
+                </ul>
+            </div>
+        </div>
+        <div class="icons">
+        <p>KEY SKILLS :</p>
+        <ul>
+            <li><i class="fa-brands fa-html5"></i></li>
+            <li><i class="fa-brands fa-css3-alt"></i></li>
+            <li><i class="fa-brands fa-square-js"></i></li>
+            <li><i class="fa-brands fa-python"></i></li>
+        </ul>
+        </div>
+    </div>
+    <div class="rightSide">
+        <div class="description">
+        <h3>Hello world!</h3>
+        <h1>Welcome to my Portfolio</h1>
+        <p>I showcase you, my arts! I hope you find it beautiful, and if so, please let me know! I can help you bring your ideas into digital realities and help your business be more attractive.</p>
+        </div>
+        <div class="iconlink">
+            <h5>follow me on : </h5>
+            <ul>
+                <li><a href="https://www.facebook.com/MichaelAngeloLim2799"><i class="fa-brands fa-facebook fa-bounce"></i></a></li>
+                <li><a href="https://www.upwork.com/freelancers/~012fa5e78c76bf1601"><i class="fa-brands fa-square-upwork fa-bounce"></i></a></li>
+                <li><a href="https://www.youtube.com/@Greywolf2127"><i class="fa-brands fa-youtube fa-bounce"></i></a></li>
+                <li><a href="https://discord.gg/JhGNQwaeZt"><i class="fa-brands fa-discord fa-bounce"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section id="services">
+<div class="services section">
+    <div class="headerTitle">
+        <h2>SERVICES</h2>
+    </div>
+    <div class="row">
+        {% for key in keyService %}
+        <div class="col-sm-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                <h5><i class="{{key.icon_code}}"></i></h5>
+                <h4>{{key.title}}</h4>
+                <p class="card-text">{{ key.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+<div style="height: 250px; display: block;"></div>
+
+
+{% endblock %}

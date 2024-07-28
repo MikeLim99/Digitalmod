@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}My Portfolio{% endblock %}
+{% block content %}
+<div class="section">
+    <div class="prev-page">
+        <a href="{% url 'portfolio' %}"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+</div>
+<div class=" detailedgallery section">
+    {% for x in galleries %}
+    <div id="carousel-example-1z" class="carousel slide carousel-fade pt-5" data-ride="carousel">
+        <div class="headerTitle">
+            <h2>{{x.title}}</h2>
+        </div>
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+        {% for img in image %}
+            <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                <img class="d-block w-100" src="{{img.images.url}}"
+                alt="First slide">
+            </div>
+            {% endfor %}
+            <!--/First slide-->
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <!--/.Controls-->
+        </div>
+        <div class="gallery-body">
+            <p>{{x.body}}</p>
+        </div>
+        <div class="custombtn">
+            <a href="{% url 'portfolio' %}" class="button">Back</a>
+            <a href="{{ x.link }}" class="button">Visit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

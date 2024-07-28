@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My Portfolio{% endblock %}
+{% block content %}
+<div class="section">
+    <div class="prev-page">
+        <a href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+</div>
+<div class="gallery section">
+    
+    <div class="row row-cols-1 row-cols-md-4 g-5">
+        {% for gallery in galleries %}
+        <div class="col">
+            <div class="customcard">
+                <img src="{{ gallery.image.url }}">
+                <div class="customcard-title">
+                    <h3>title test</h2>
+                </div>
+                <div class="customcard-body">
+                    <p>test</p>
+                </div>
+                <div class="custombtn">
+                    <a href="{% url 'detailedPortfolio' gallery.id %}" class="button">View</a>
+                    <a href="{{ gallery.link }}" class="button">Visit</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+<div style="height: 250px; display: block;"></div>
+{% endblock %}

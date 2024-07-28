@@ -1,0 +1,28 @@
+{% load static %}
+<nav>
+    <ul class="sidebar">
+        <li onclick="hideSidebar()"><a><i class="fa-solid fa-xmark"></i></a></li>
+        <li><a href="{% url 'contacts' %}">Contacts</a></li>
+        <li onclick="hideSidebar()"><a href="{% url 'home' %}#services">Services</a></li>
+        <li><a href="{% url 'blogs' %}">Posts & Updates</a></li>
+        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+    </ul>
+    <ul class="">
+        <li><a href="{% url 'home' %}">Digital Mod</a></li>
+        <li class="hideOnMobile"><a href="{% url 'contacts' %}">Contacts</a></li>
+        <li class="hideOnMobile"><a href="{% url 'home' %}#services">Services</a></li>
+        <li class="hideOnMobile"><a href="{% url 'blogs' %}">Posts & Updates</a></li>
+        <li class="hideOnMobile"><a href="{% url 'portfolio' %}">Portfolio</a></li>
+        <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+    </ul>
+</nav>
+<script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'block'
+    }
+    function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+    }
+</script>

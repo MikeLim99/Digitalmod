@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}My Portfolio | {{ post.title }}{% endblock %}
+{% block content %}
+<div class="section">
+    <div class="prev-page">
+        <a href="{% url 'blogs' %}"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+</div>
+<div class="section">
+    <div class="headerTitle">
+        <h2>Article</h2>
+    </div>
+    <div class="detailedpost">
+        <h1>{{ post.title }}</h1>
+        <small>By : {{ post.author.first_name }}{{ post.author.last_name }}</small>
+
+        <hr>
+        <br>
+        <p>{{post.body}}</p>
+        <br>
+        <div class="custombtn">
+            <a href="{% url 'blogs' %}" class="button">back</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

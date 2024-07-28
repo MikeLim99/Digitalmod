@@ -1,0 +1,28 @@
+@media(max-width:800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .main {
+        min-height: 85vh;
+        display: block;
+        align-items: center;
+    }
+    .section{
+        padding: 20px;
+    }
+    .sidebar{
+        width: 100%;
+    }
+    
+}
+
+@media(max-width:1200px) {
+    .contacts {
+        min-height: 70vh;
+        display: block;
+        align-items: center;
+    }
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}My Portfolio | Post & Updates{% endblock %}
+{% block content %}
+<div class="section">
+    <div class="prev-page">
+        <a href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+</div>
+<div class="headerTitle">
+    <h2>Post & Updates</h2>
+</div>
+<div class="blogs section">
+    <div class="bloglists">
+        <ul>
+        {% for post in object_list %}
+        <a href="{% url 'detailed-Blog' post.pk %}"><li><h5>{{ post.title }}</h5>
+            <small>author: {{ post.author }}</small> <br>
+            <p>{{ post.body }}</p></li>
+        </a> 
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+<div style="height: 150px; display: block;"></div>
+{% endblock %}
